@@ -1,4 +1,7 @@
 package br.com.sportmanger.subscription.repository;
 
-public interface SubscriptionService {
+import br.com.sportmanger.subscription.document.SubscriptionDocument;
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+public interface SubscriptionRepository extends MongoRepository<SubscriptionDocument, String> {
 }

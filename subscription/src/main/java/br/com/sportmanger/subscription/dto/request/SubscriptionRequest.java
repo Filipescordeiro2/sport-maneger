@@ -1,4 +1,4 @@
-package br.com.sportmanger.subscription.dto;
+package br.com.sportmanger.subscription.dto.request;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
