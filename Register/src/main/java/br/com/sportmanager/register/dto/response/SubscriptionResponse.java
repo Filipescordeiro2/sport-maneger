@@ -1,4 +1,4 @@
-package br.com.sportmanger.subscription.dto.response;
+package br.com.sportmanager.register.dto.response;
 
 import lombok.Builder;
 

@@ -1,4 +1,4 @@
-package br.com.sportmanger.subscription.kafka.producer;
+package br.com.sportmanager.register.kafka.producer;
 
 
 import org.apache.kafka.clients.producer.ProducerConfig;

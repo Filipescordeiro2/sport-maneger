@@ -28,7 +28,7 @@ public class ClientDocument {
     private Integer age;
     private LocalDate birthday;
     private AddressDocument address;
-
+    private SubscritpionDocument subscritpion;
 
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
