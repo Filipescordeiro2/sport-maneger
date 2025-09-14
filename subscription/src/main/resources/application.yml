@@ -1,0 +1,18 @@
+server:
+port: 8080
+
+spring:
+data:
+mongodb:
+uri: ${SPRING_DATA_MONGODB_URI:mongodb://admin:123456@localhost:27017/register-db?authSource=admin}
+
+kafka:
+bootstrap-servers: ${SPRING_KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
+consumer:
+group-id: register-service-group
+auto-offset-reset: earliest
+key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+producer:
+key-serializer: org.apache.kafka.common.serialization.StringSerializer
+value-serializer: org.apache.kafka.common.serialization.StringSerializer

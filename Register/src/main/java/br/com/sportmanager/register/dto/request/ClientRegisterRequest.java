@@ -30,5 +30,5 @@ public record ClientRegisterRequest(
 
         @Valid
         @NotNull(message = "address is required")
-        AddressRequest address ) {
+        AddressRequest address) {
 }

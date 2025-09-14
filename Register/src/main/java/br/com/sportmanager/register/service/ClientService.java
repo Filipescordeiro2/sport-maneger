@@ -11,7 +11,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-
 @Service
 @Slf4j
 @RequiredArgsConstructor
@@ -61,6 +60,27 @@ public class ClientService {
             throw new ClientException(e.getMessage());
         } catch (Exception e) {
             log.error("[ClientService - getClient] - Exception: {}", e.getMessage());
+            throw e;
+        }
+    }
+
+    public ClientResponse getClientForClientId(String clientId) {
+        log.info("[ClientService - getClient] - Initializing service getClientForClientId");
+        try {
+            log.info("[ClientService - getClientForClientId] - CPF: {}", clientId);
+            var client = clientRepository
+                    .findByClientId(clientId)
+                    .orElseThrow(()->new ClientException("Client not found for this ClientId: " + clientId));
+
+            var clientResponse = ClientMapper.toClientResponse(client);
+            log.info("[ClientService - getClientForClientId] - Translate Document x Response: {}", clientResponse);
+
+            return clientResponse;
+        } catch (ClientException e) {
+            log.error("[ClientService - getClientForClientId] - ClientException: {}", e.getMessage());
+            throw new ClientException(e.getMessage());
+        } catch (Exception e) {
+            log.error("[ClientService - getClientForClientId] - Exception: {}", e.getMessage());
             throw e;
         }
     }

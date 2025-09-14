@@ -8,4 +8,6 @@ import java.util.Optional;
 public interface ClientRepository extends MongoRepository<ClientDocument, String> {
     boolean existsByCpf(String cpf);
     Optional<ClientDocument> findByCpf(String cpf);
+    Optional<ClientDocument> findByClientId(String clientId);
+
 }
