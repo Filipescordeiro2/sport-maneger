@@ -25,6 +25,7 @@ public class ClientMapper {
                 .birthday(request.birthday())
                 .age(LocalDate.now().getYear() - request.birthday().getYear())
                 .address(AddressMapper.toAddress(request.address()))
+                .subscritpion(null)
                 .createdAt(LocalDateTime.now())
                 .updatedAt(LocalDateTime.now())
                 .build();
@@ -50,6 +51,7 @@ public class ClientMapper {
                 .birthday(client.getBirthday())
                 .age(client.getAge())
                 .address(AddressMapper.toAddressResponse(client.getAddress()))
+                .subscription(SubscriptionMapper.toSubscriptionResponse(client.getSubscritpion()))
                 .createdAt(client.getCreatedAt())
                 .updatedAt(client.getUpdatedAt())
                 .build();

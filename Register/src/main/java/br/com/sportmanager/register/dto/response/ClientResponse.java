@@ -14,6 +14,7 @@ public record ClientResponse(String clientId,
                              Integer age,
                              LocalDate birthday,
                              AddressResponse address,
+                             SubscriptionResponse subscription,
                              LocalDateTime createdAt,
                              LocalDateTime updatedAt,
                              Boolean active) {
