@@ -1,7 +1,6 @@
 package br.com.sportmanger.subscription.controller;
 
 import br.com.sportmanger.subscription.dto.request.SubscriptionRequest;
-import br.com.sportmanger.subscription.dto.response.SubscriptionResponse;
 import br.com.sportmanger.subscription.service.SubscriptionService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -18,8 +17,9 @@ public class SubscriptionController {
     private final SubscriptionService subscriptionService;
 
     @PostMapping
-    public SubscriptionResponse createSubscription(@Valid @RequestBody SubscriptionRequest subscriptionRequest) {
+    public Object createSubscription(@Valid @RequestBody SubscriptionRequest subscriptionRequest) {
         return subscriptionService.createSubscription(subscriptionRequest);
     }
+
 
 }

@@ -15,4 +15,12 @@ public class KafkaTopicConfig {
                 .replicas(1)   // geralmente 1 no local
                 .build();
     }
+
+    @Bean
+    public NewTopic subscriptionUpdateTopic() {
+        return TopicBuilder.name("subscription-update-status")
+                .partitions(3) // pode ajustar conforme necessidade
+                .replicas(1)   // geralmente 1 no local
+                .build();
+    }
 }
