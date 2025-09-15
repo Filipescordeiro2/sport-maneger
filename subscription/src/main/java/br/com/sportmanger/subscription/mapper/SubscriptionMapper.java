@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Component
-public class Subscription {
+public class SubscriptionMapper {
 
     public static SubscriptionDocument toSubscriptionDocument(SubscriptionRequest request) {
         return SubscriptionDocument
